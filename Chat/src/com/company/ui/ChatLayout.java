@@ -3,6 +3,7 @@ package com.company.ui;
 import com.company.infrastructure.Methods;
 import com.company.threads.GetMessagesThread;
 import com.company.threads.SendMessageThread;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -54,21 +55,25 @@ public class ChatLayout extends VBox {
 
         getChildren().addAll(chatView, inputView);
 
-        new GetMessagesThread(counter).start();
+        new GetMessagesThread(counter, this).start();
     }
 
     private void sendMessage(){
         String message = inputMessage.getText().trim();
         if (Methods.validate(message)){
-            new SendMessageThread(message).start();
-            /*
-            chatView.appendText(NameLayout.getName() + ": " + message + "\n");
+            new SendMessageThread(NameLayout.getName() + ": " + message).start();
             inputMessage.clear();
             inputMessage.requestFocus();
-            */
-
         }
+    }
 
+    public void displayMessage(String message){
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                chatView.appendText(message + "\n");
+            }
+        });
     }
 
 }

@@ -13,11 +13,17 @@ public class SendMessageThread extends Thread {
     static final int SERVER_PORT = 11438;
     static final String SERVER_IP = "10.0.7.49";
 
+    private static final int CLIENT_SEND_MESSAGE = 1;
+    private static final int CLIENT_GET_MESSAGE = 2;
+    private static final int CLIENT_SEND_IMAGE = 3;
+
     private String message;
 
     public SendMessageThread(String message){
         this.message = message;
     }
+
+    // CLIENT
 
     @Override
     public void run() {
@@ -28,6 +34,7 @@ public class SendMessageThread extends Thread {
             socket = new Socket(SERVER_IP, SERVER_PORT);
             out = socket.getOutputStream();
             in = socket.getInputStream();
+            out.write(CLIENT_SEND_MESSAGE);
             out.write(message.getBytes());
             int status = in.read();
             System.out.println("status (1 - success, 0 - failure) value: " + status);

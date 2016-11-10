@@ -15,7 +15,7 @@ public class Main {
         try {
             ServerSocket server = new ServerSocket(PORT);
             while(true) {
-                System.out.println("waiting for client...");
+                System.out.println("waiting for clients...");
                 Socket client = server.accept();
                 System.out.println("client connected..");
                 new ClientThread(client).start();
