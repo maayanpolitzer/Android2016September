@@ -1,5 +1,6 @@
 package com.company.interfaces;
 
+import com.company.infrastructure.BankAccount;
 import javafx.scene.Parent;
 
 /**
@@ -7,6 +8,10 @@ import javafx.scene.Parent;
  */
 public interface ChangeSceneListener {
 
+    // pointer to Main class.
+
     void changeScene(Parent layout);
+
+    boolean createAccountAndSwitchScene(Parent layout, BankAccount account);
 
 }
