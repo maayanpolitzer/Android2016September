@@ -1,0 +1,230 @@
+[{
+    "Team": "Brazil",
+    "Number": "1",
+    "Position": "GK",
+    "FullName": "",
+    "Club": "Botafogo de Futebol e Regatas",
+    "ClubCountry": "BRA",
+    "DateOfBirth": "1983-1-2",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "2",
+    "Position": "DF",
+    "FullName": "Dani Alves",
+    "Club": "FC Barcelona",
+    "ClubCountry": "ESP",
+    "DateOfBirth": "1983-5-6",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "3",
+    "Position": "DF",
+    "FullName": "Thiago Silva",
+    "Club": "Paris Saint-Germain F.C.",
+    "ClubCountry": "FRA",
+    "DateOfBirth": "1984-9-22",
+    "IsCaptain": true
+  },
+  {
+    "Team": "Brazil",
+    "Number": "4",
+    "Position": "DF",
+    "FullName": "David Luiz",
+    "Club": "Chelsea F.C.",
+    "ClubCountry": "ENG",
+    "DateOfBirth": "1987-4-22",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "5",
+    "Position": "MF",
+    "FullName": "Fernando Luiz Roza",
+    "Club": "Manchester City F.C.",
+    "ClubCountry": "ENG",
+    "DateOfBirth": "1985-5-4",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "6",
+    "Position": "DF",
+    "FullName": "Marcelo Vieira",
+    "Club": "Real Madrid C.F.",
+    "ClubCountry": "ESP",
+    "DateOfBirth": "1988-5-12",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "7",
+    "Position": "FW",
+    "FullName": "Hulk (footballer)",
+    "Club": "FC Zenit Saint Petersburg",
+    "ClubCountry": "RUS",
+    "DateOfBirth": "1986-7-25",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "8",
+    "Position": "MF",
+    "FullName": "Paulinho (footballer)",
+    "Club": "Tottenham Hotspur F.C.",
+    "ClubCountry": "ENG",
+    "DateOfBirth": "1988-7-25",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "9",
+    "Position": "FW",
+    "FullName": "Fred (footballer)",
+    "Club": "Fluminense Football Club",
+    "ClubCountry": "BRA",
+    "DateOfBirth": "1983-10-3",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "10",
+    "Position": "FW",
+    "FullName": "Neymar",
+    "Club": "FC Barcelona",
+    "ClubCountry": "ESP",
+    "DateOfBirth": "1992-2-5",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "11",
+    "Position": "MF",
+    "FullName": "Oscar (footballer born 1991)",
+    "Club": "Chelsea F.C.",
+    "ClubCountry": "ENG",
+    "DateOfBirth": "1991-9-9",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "12",
+    "Position": "GK",
+    "FullName": "",
+    "Club": "Toronto FC",
+    "ClubCountry": "CAN",
+    "DateOfBirth": "1979-9-3",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "13",
+    "Position": "DF",
+    "FullName": "Dante (footballer)",
+    "Club": "FC Bayern Munich",
+    "ClubCountry": "GER",
+    "DateOfBirth": "1983-10-18",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "14",
+    "Position": "DF",
+    "FullName": "Maxwell Cabelino Andrade",
+    "Club": "Paris Saint-Germain F.C.",
+    "ClubCountry": "FRA",
+    "DateOfBirth": "1981-8-27",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "15",
+    "Position": "DF",
+    "FullName": "Henrique Adriano Buss",
+    "Club": "S.S.C. Napoli",
+    "ClubCountry": "ITA",
+    "DateOfBirth": "1986-10-14",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "16",
+    "Position": "MF",
+    "FullName": "Ramires",
+    "Club": "Chelsea F.C.",
+    "ClubCountry": "ENG",
+    "DateOfBirth": "1987-3-24",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "17",
+    "Position": "MF",
+    "FullName": "Luiz Gustavo",
+    "Club": "VfL Wolfsbu",
+    "ClubCountry": "GER",
+    "DateOfBirth": "1987-7-23",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "18",
+    "Position": "MF",
+    "FullName": "Hernanes",
+    "Club": "Inter Milan",
+    "ClubCountry": "ITA",
+    "DateOfBirth": "1985-5-29",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "19",
+    "Position": "MF",
+    "FullName": "Willian Borges da Silva",
+    "Club": "Chelsea F.C.",
+    "ClubCountry": "ENG",
+    "DateOfBirth": "1988-8-9",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "20",
+    "Position": "FW",
+    "FullName": "Bernard (footballer)",
+    "Club": "FC Shakhtar Donetsk",
+    "ClubCountry": "UKR",
+    "DateOfBirth": "1992-9-8",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "21",
+    "Position": "FW",
+    "FullName": "",
+    "Club": "Atl?©tico Minei",
+    "ClubCountry": "BRA",
+    "DateOfBirth": "1987-3-20",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "22",
+    "Position": "GK",
+    "FullName": "Victor Leandro Bagy",
+    "Club": "Clube Atl?©tico Mineiro",
+    "ClubCountry": "BRA",
+    "DateOfBirth": "1983-1-21",
+    "IsCaptain": false
+  },
+  {
+    "Team": "Brazil",
+    "Number": "23",
+    "Position": "DF",
+    "FullName": "Maicon Sisenando",
+    "Club": "A.S. Roma",
+    "ClubCountry": "ITA",
+    "DateOfBirth": "1981-7-26",
+    "IsCaptain": false
+}]
