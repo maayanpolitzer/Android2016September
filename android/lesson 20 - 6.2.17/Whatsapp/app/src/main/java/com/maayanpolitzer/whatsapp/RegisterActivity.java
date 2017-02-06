@@ -1,5 +1,7 @@
 package com.maayanpolitzer.whatsapp;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -17,11 +22,22 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText usernameET, passwordET, conPassET;
 
+    public static final String PREFS_NAME = "prefs";
+    private SharedPreferences settings;
+    private SharedPreferences.Editor editor;
+
+    /*
+    how to download only onw project from github...
+    http://kinolien.github.io/gitzip/
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        editor = settings.edit();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -58,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+
     private class RegisterTask extends AsyncTask<Void, Void, Integer> {
 
         private String username, password;
@@ -69,29 +86,52 @@ public class RegisterActivity extends AppCompatActivity {
 
         @Override
         protected Integer doInBackground(Void... params) {
+            Socket socket = null;
+            int userID = 0;
             // new thread...
             try {
-                Socket socket = new Socket("10.0.24.27", 10234);
+                socket = new Socket("10.0.24.27", 10234);
                 OutputStream out = socket.getOutputStream();
                 InputStream in = socket.getInputStream();
                 out.write(1);
-                int serverResponse = in.read();
-                in.close();
-                out.close();
-                return serverResponse;
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("USERNAME", username);
+                jsonObject.put("PASSWORD", password);
+                out.write(jsonObject.toString().getBytes());
+                userID = in.read();
             } catch (IOException e) {
                 e.printStackTrace();
-                return -1;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } finally {
+                if (socket != null){
+                    try {
+                        socket.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
+            return userID;
 
         }
 
         @Override
         protected void onPostExecute(Integer integer) {
+
             // works on the Main Thread (UI Thread)
-            if (integer == 10){
-                Toast.makeText(RegisterActivity.this, "Server got your message!!!", Toast.LENGTH_SHORT).show();
+            if (integer != 0){
+                // user added to servers list.
+                Toast.makeText(RegisterActivity.this, "OK", Toast.LENGTH_SHORT).show();
+                editor.putString("USERNAME", username);
+                editor.putString("PASSWORD", password);
+                editor.commit();
+                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                finish();
+            }else{
+                Toast.makeText(RegisterActivity.this, "Problem", Toast.LENGTH_SHORT).show();
             }
+
         }
     }
 }

@@ -1,5 +1,8 @@
 package com.company;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -35,7 +38,8 @@ public class ClientThread extends Thread {
             }
         } catch (IOException e) {
             e.printStackTrace();
-
+        } catch (JSONException e) {
+            e.printStackTrace();
         } finally {
             if (clientSocket != null){
                 try {
@@ -48,11 +52,24 @@ public class ClientThread extends Thread {
 
     }
 
-    private void registerUser() throws IOException {
-        out.write(10);
+    private void registerUser() throws IOException, JSONException {
+        String[] data = getUserData();
+        out.write(Main.insertUser(new User(data)));
     }
 
-    private void loginUser(){
+    private void loginUser() throws IOException, JSONException {
+        String[] data = getUserData();
+        out.write(Main.getUserIdByNameAndPassword(data[0], data[1]));
+    }
 
+    private String[] getUserData() throws IOException, JSONException {
+        String[] data = new String[2];
+        byte[] buffer = new byte[1024];
+        int length = in.read(buffer);
+        String str = new String(buffer, 0, length);
+        JSONObject object = new JSONObject(str);
+        data[0] = object.getString("USERNAME");
+        data[1] = object.getString("PASSWORD");
+        return data;
     }
 }
