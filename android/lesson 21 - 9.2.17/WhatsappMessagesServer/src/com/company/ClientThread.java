@@ -70,7 +70,7 @@ public class ClientThread extends Thread {
         Main.addMessageToList(message);
         System.out.println("client sent: " + sb.toString());
     }
-    
+
     private void clientWantsToGetMessage() throws IOException {
         int client = in.read();
         Message message = Main.getMessageById(client);
