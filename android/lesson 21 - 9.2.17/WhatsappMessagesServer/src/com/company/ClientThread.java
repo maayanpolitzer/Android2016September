@@ -1,6 +1,7 @@
 package com.company;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,7 +33,12 @@ public class ClientThread extends Thread {
                     out.write(Main.getUsersAsJsonArray().toString().getBytes());
                     break;
                 case 2:
+                    // client sent message
                     clientSendingMessage();
+                    break;
+                case 3:
+                    // client wants to get a message.
+                    clientWantsToGetMessage();
                     break;
             }
 
@@ -52,14 +58,29 @@ public class ClientThread extends Thread {
         }
     }
 
-    private void clientSendingMessage() throws IOException {
+    private void clientSendingMessage() throws IOException, JSONException {
         byte[] buffer = new byte[1024];
         int length;
         StringBuilder sb = new StringBuilder();
         while ((length = in.read(buffer)) > 0){
             sb.append(new String(buffer, 0, length));
         }
+        JSONObject obj = new JSONObject(sb.toString());
+        Message message = new Message(obj);
+        Main.addMessageToList(message);
         System.out.println("client sent: " + sb.toString());
+    }
+    
+    private void clientWantsToGetMessage() throws IOException {
+        int client = in.read();
+        Message message = Main.getMessageById(client);
+        if (message != null){
+            out.write(1);
+            out.write(message.getJson().toString().getBytes());
+            message.setRead(true);
+        }else{
+            out.write(0);
+        }
     }
 
 }
